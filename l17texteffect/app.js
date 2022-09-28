@@ -8,6 +8,8 @@ const gettxtani = document.querySelector(".txtani");
 
 
 
+
+
 //give value take index
 
 //console.log(languages.inedxOf("Laravel")); //3
@@ -48,6 +50,7 @@ function showwords(word){
 
 	//console.log(word);
 	gettxtani.innerHTML = "";
+	gettxtani.classList.add(colors[languages.indexOf(word)]);
 
 	//gettxtani.innerHTML = word; //Nodejs
 
@@ -58,6 +61,7 @@ function showwords(word){
 		if(x >= word.length){
 
 			clearInterval(showinterval);
+			deletewords();
 
 		}else{
 
@@ -73,16 +77,66 @@ let gen = generator();
 
 showwords(languages[gen.next().value]); //Nodejs
 
-while(true){
-	showwords(languages[gen.next().value]);
-}
+
 
 function deletewords(){
 
+	let getword = gettxtani.innerHTML;
+	console.log(getword);
+
+	let getlastidx = getword.length - 1;
+	console.log(getlastidx);
+
+	let delinterval = setInterval(function(){
+
+		if(getlastidx >= 0){
+
+									//copy all
+			gettxtani.innerHTML = gettxtani.innerHTML.substring(0,gettxtani.innerHTML.length-1);
+			getlastidx--;
+			//Nodej s
+			//0   4
+
+		}else{
+
+			gettxtani.classList.remove(colors[languages.indexOf(getword)]);
+			showwords(languages[gen.next().value]);
+			clearInterval(delinterval);
+
+		}
+
+	},500);
+
 }
 
+//substring(0,...)
 
 
+let gettxtlights = document.querySelectorAll(".text-light"); //nodelist
+
+gettxtlights.forEach(function(gettxtlight){
+	//console.log(gettxtlight);
+
+	let arrtexts = gettxtlight.textContent.split("");
+	console.log(arrtexts);//array
+
+	gettxtlight.textContent = "";
+
+	arrtexts.forEach(function(arrtext,idx){
+
+		console.log(arrtext);
+
+		let newem = document.createElement('em');
+		newem.textContent = arrtext;
+		newem.style.animationDelay = `${idx * .05}s`;
+
+		gettxtlight.append(newem);
+
+	});
+
+
+
+});
 
 
 

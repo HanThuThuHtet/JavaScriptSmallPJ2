@@ -23,6 +23,8 @@ span.txtani{
 	animation-name: mycursorani;
 	animation-duration: .8s;
 	animation-iteration-count: infinite;
+	
+
 }
 
 @keyframes mycursorani{
@@ -35,7 +37,7 @@ span.txtani{
 }
 
 .red{
-	color: #79A08A;
+	color: #B0EBCE;
 }
 
 .skyblue{
@@ -43,9 +45,36 @@ span.txtani{
 }
 
 .violet{
-	color: #F0D4BF;
+	color: #D5365A;
 }
 
 .yellow{
-	color: #557C81;
+	color: #E9A540;
+}
+
+em{
+	color: #fff;
+	font-style: unset; /*no italic*/
+
+	animation-name: textlighting;
+	animation-duration: .8s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes textlighting{
+
+	0%{
+		opacity: 0;
+	}
+
+	50%{
+		opacity: 0.5;
+		text-shadow: 0 0 10px #fff;
+	}
+
+	100%{
+		opacity: 1;
+	}
+
+
 }
