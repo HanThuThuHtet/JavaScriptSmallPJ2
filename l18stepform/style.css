@@ -40,6 +40,10 @@ body{
 	opacity: 1;
 }
 
+.dot.done{
+	background: green;
+}
+
 
 #form{
 	width: 90%;
@@ -103,4 +107,6 @@ input.invalid{
 #prevbtn{
 	background: #555;
 }
+
+
 
