@@ -110,7 +110,7 @@ function* genfun(){
 //console.log(genfun().next().value);
 
 let gen = genfun();
-console.log(gen.next().value);
+//console.log(gen.next().value);
 
 
 
@@ -137,7 +137,7 @@ function formvalidation(){
 			// 	key : getcurrinput[x].value
 			// } // 0 1 because of curridx
 
-			console.log('gen value is ', gen.next().value); //from gen fun
+			//console.log('gen value is ', gen.next().value); //from gen fun
 
 				//Start Method 1
 
