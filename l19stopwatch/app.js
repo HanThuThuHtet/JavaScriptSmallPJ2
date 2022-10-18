@@ -140,7 +140,7 @@ getresetbtn.onclick = function(){
 function reloadagain(){
 	if(idx === 0){
 		clearInterval(setinvdisplay);
-		var [hours,minutes,seconds,milliseconds] = [0,0,0,0];
+		[hours,minutes,seconds,milliseconds] = [0,0,0,0];
 		getdisplay[idx].innerHTML = "00 : 00 : 00 : 000";
 
 
