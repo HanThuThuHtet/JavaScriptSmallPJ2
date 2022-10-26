@@ -20,9 +20,39 @@ getbtns.forEach(function(getbtn){
 
 		var getcommand = getbtn.dataset['command'];
 
-		console.log(getcommand);
+		if(getcommand === "cleartext"){
 
-		document.execCommand(getcommand,false,null);
+			getdivarea.innerHTML = "";
+
+		}else if(getcommand === "createLink" || getcommand === "insertImage"){
+								//message
+			let geturl = prompt("Enter your website link","https://");
+								//default
+
+			document.execCommand(getcommand,false,geturl);
+
+		}else if(getcommand === "foreColor"){
+
+			console.log(getbtn.value);
+			document.execCommand(getcommand,false,getbtn.value);
+
+		}else if(getcommand === "paste"){
+
+			navigator.clipboard.readText().then(function(cliptext){
+
+				console.log(cliptext);
+				getdivarea.innerHTML += cliptext;
+			});
+
+		}
+		else{
+
+			console.log(getcommand);
+
+			document.execCommand(getcommand,false,null);
+		}
+
+		
 
 
 
