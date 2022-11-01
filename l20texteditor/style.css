@@ -37,7 +37,7 @@ textarea{
 	max-height: 500px;
 	border: 1px solid silver;
 	padding: 10px;
-	text-align: justify;
+	text-align: justify; /*for justify center in divarea*/
 
 	resize: vertical;
 
